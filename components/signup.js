@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
 import * as firebase from "firebase";
 
-
 export default class Signup extends Component {
   
   constructor() {
@@ -82,14 +81,14 @@ export default class Signup extends Component {
         />   
         <Button
           color="#3740FE"
-          title="Signup"
+          title="Sign Up"
           onPress={() => this.registerUser()}
         />
 
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Login')}>
-          Already Registered? Click here to login
+          Already Registered? Click here to log in.
         </Text>                          
       </View>
     );
