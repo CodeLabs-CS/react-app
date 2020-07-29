@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
 import * as firebase from "firebase";
+// import Toolbar from '@material-ui/core/Toolbar';
 
 
 export default class Login extends Component {
@@ -50,7 +51,7 @@ export default class Login extends Component {
     if(this.state.isLoading){
       return(
         <View style={styles.preloader}>
-          <ActivityIndicator size="large" color="#9E9E9E"/>
+          <ActivityIndicator size="large" color="#fff"/>
         </View>
       )
     }    
@@ -59,6 +60,7 @@ export default class Login extends Component {
         <TextInput
           style={styles.inputStyle}
           placeholder="Email"
+          color="white"
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
@@ -93,18 +95,21 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     padding: 35,
-    backgroundColor: '#fff'
+    backgroundColor: '#293428'
   },
   inputStyle: {
     width: '100%',
     marginBottom: 15,
     paddingBottom: 15,
     alignSelf: "center",
-    borderColor: "#ccc",
+    borderColor: "#fff",
     borderBottomWidth: 1
   },
+  // textInputStyle: {
+  //   color:'#fff'
+  // },
   loginText: {
-    color: '#3740FE',
+    color: '#fff',
     marginTop: 25,
     textAlign: 'center'
   },

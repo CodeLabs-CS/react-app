@@ -1,7 +1,7 @@
 // components/signup.js
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image } from 'react-native';
 import * as firebase from "firebase";
 
 export default class Signup extends Component {
@@ -59,6 +59,7 @@ export default class Signup extends Component {
     }    
     return (
       <View style={styles.container}>  
+        <Image source = {require('../assets/logo.svg')} style={styles.Logo}/>
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
@@ -80,7 +81,7 @@ export default class Signup extends Component {
           secureTextEntry={true}
         />   
         <Button
-          color="#3740FE"
+          color="#fff"
           title="Sign Up"
           onPress={() => this.registerUser()}
         />
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     padding: 35,
-    backgroundColor: '#fff'
+    backgroundColor: '#293428'
   },
   inputStyle: {
     width: '100%',
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   loginText: {
-    color: '#3740FE',
+    color: '#fff',
     marginTop: 25,
     textAlign: 'center'
   },
@@ -126,5 +127,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff'
+  },
+  Logo: {
+    flex: 1,
+    width:null,
+    height: null,
+    justifyContent:'center'
   }
+
 });
