@@ -59,7 +59,7 @@ export default class Signup extends Component {
     }    
     return (
       <View style={styles.container}>  
-        <Image source = {require('../assets/logo.svg')} style={styles.Logo}/>
+        {/* <Image source = {require('../assets/logo.svg')} style={styles.Logo}/> */}
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
