@@ -1,46 +1,72 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-import { createSwitchNavigator, createAppContainer } from "react-navigation";
+// App.js test!
+import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import * as firebase from "firebase";
 var firebaseConfig = {
-  apiKey: "AIzaSyDFZxP132DBpt71b4zujsxNyo1nWWhDDrg",
-  authDomain: "newexpoproject-94979.firebaseapp.com",
-  databaseURL: "https://newexpoproject-94979.firebaseio.com",
-  projectId: "newexpoproject-94979",
-  storageBucket: "newexpoproject-94979.appspot.com",
-  messagingSenderId: "600609107007",
-  appId: "1:600609107007:web:19c73452a0bfe0a6239c8a"
+  apiKey: "AIzaSyDmDITr2c11TBklQ6s05KGGh4NALcNOCdk",
+  authDomain: "reacthooks-firebaselogin.firebaseapp.com",
+  databaseURL: "https://reacthooks-firebaselogin.firebaseio.com",
+  projectId: "reacthooks-firebaselogin",
+  storageBucket: "reacthooks-firebaselogin.appspot.com",
+  messagingSenderId: "403004885385",
+  appId: "1:403004885385:web:9f3ba64118d35e09183958"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-import Loading from "./components/Loading";
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
-import Main from "./components/Main";
 
+import Login from './components/login';
+import Signup from './components/signup';
+import Dashboard from './components/dashboard';
 
-// create the app's navigation stack
-const RootStack = createSwitchNavigator(
-  {
-    Loading: Loading,
-    SignUp: SignUp,
-    Login: Login,
-    Main: Main,
-  },
-  {
-    initialRouteName: "Loading"
-  }
-);
+const Stack = createStackNavigator();
 
-const App = createAppContainer(RootStack);
-export default App;
+function MyStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Signup"
+      screenOptions={{
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: '#3740FE',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}>
+      <Stack.Screen 
+        name="Signup" 
+        component={Signup} 
+        options={{ title: 'Signup' }}
+      />       
+      <Stack.Screen 
+        name="Login" 
+        component={Login} 
+        options={
+          {title: 'Login'},
+          {headerLeft: null} 
+        }
+      />
+      <Stack.Screen 
+       name="Dashboard" 
+       component={Dashboard} 
+       options={
+         { title: 'Dashboard' },
+         {headerLeft: null} 
+       }
+      />
+    </Stack.Navigator>
+  );
+}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#A5DFB2',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+  );
+}
