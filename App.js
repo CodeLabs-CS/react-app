@@ -19,15 +19,6 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Main from "./components/Main";
 
-<<<<<<< Updated upstream
-=======
-import Login from './components/login';
-import Signup from './components/signup';
-import Dashboard from './components/dashboard';
-import Tableau from './components/Tableau';
-import Tableau2 from './components/Tableau2';
-import Tableau3 from './components/Tableau3';
->>>>>>> Stashed changes
 
 // create the app's navigation stack
 const RootStack = createSwitchNavigator(
@@ -42,7 +33,6 @@ const RootStack = createSwitchNavigator(
   }
 );
 
-<<<<<<< Updated upstream
 const App = createAppContainer(RootStack);
 export default App;
 
@@ -54,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-=======
 function MyStack() {
   return (
     <Stack.Navigator
@@ -161,4 +150,3 @@ export default function App() {
 
 
 
->>>>>>> Stashed changes
