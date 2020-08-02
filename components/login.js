@@ -1,10 +1,6 @@
-// components/login.js
-
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
 import * as firebase from "firebase";
-// import Toolbar from '@material-ui/core/Toolbar';
-
 
 export default class Login extends Component {
   
