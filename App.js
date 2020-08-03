@@ -21,6 +21,10 @@ firebase.initializeApp(firebaseConfig);
 import Login from './components/login';
 import Signup from './components/signup';
 import Dashboard from './components/dashboard';
+import Tableau from './components/Tableau';
+import Tableau2 from './components/Tableau2';
+import Tableau3 from './components/Tableau3';
+
 
 const Stack = createStackNavigator();
 
@@ -59,6 +63,33 @@ function MyStack() {
          {headerLeft: null} 
        }
       />
+
+      <Stack.Screen 
+        name="Graph 1: Candidates" 
+        component={Tableau} 
+        options={
+          { title: 'Candidates' },
+          {headerLeft: null} 
+        }
+      />
+
+      <Stack.Screen 
+        name="Graph 2: Location of Candidates" 
+        component={Tableau2} 
+        options={
+          { title: 'Location of Candidates' },
+          {headerLeft: null} 
+        }
+      />
+
+      <Stack.Screen 
+        name="Graph 3: Contact Info of Candidates" 
+        component={Tableau3} 
+        options={
+          { title: 'Contact Information of Candidates' },
+          {headerLeft: null} 
+        }
+      />
     </Stack.Navigator>
   );
 }
@@ -70,3 +101,34 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import * as firebase from "firebase";
 
+/*import * as Tableau from './Tableau';
+import * as Tableau2 from './Tableau2';
+import * as Tableau3 from './Tableau3';*/
+
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -21,7 +25,7 @@ export default class Dashboard extends Component {
   render() {
     this.state = { 
       displayName: firebase.auth().currentUser.displayName,
-      uid: firebase.auth().currentUser.uid
+      uid: firebase.auth().currentUser.uid,
     }    
     return (
       <View style={styles.container}>
@@ -32,7 +36,7 @@ export default class Dashboard extends Component {
         <Button
           color="#3740FE"
           title="Display Graph"
-          onPress={() => this.props.navigation.navigate("Graph 1: Candidates")}
+          onPress={() => this.props.navigation.navigate("Tableau")}
         />
 
         <Button
@@ -44,6 +48,7 @@ export default class Dashboard extends Component {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -59,7 +64,3 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
-
-
-
-      
