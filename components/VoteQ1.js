@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, ActivityIndicator, Image, Button} from 'react-native';
 
-
 export default class VoteQ1 extends React.Component{
     render(){
         return(
@@ -20,13 +19,26 @@ export default class VoteQ1 extends React.Component{
                     </Text>
                 </View>
 
+            <View style={{flex: 1, flexDirection: 'row'}}>
 
-                {/* <View>
-                    <Button>
+                <View style={styles.buttonStyle}>
+                    <Text 
+                    style={styles.textStyle}
+                    onPress={() => this.props.navigation.navigate('AddRegistration')}>
+                    Yes
+                    </Text>  
+                </View>
 
-                    </Button>
-                </View> */}
+                <View style={styles.buttonStyle}>
+                    <Text 
+                    style={styles.textStyle}
+                    onPress={() => this.props.navigation.navigate('VoteQ2N')}>
+                    No
+                    </Text> 
+                </View>
+
             </View>
+        </View>
         )
     }
 }
@@ -49,6 +61,7 @@ const styles = StyleSheet.create({
       },
 
       questionStyle: {
+        flex: 1,
         position: 'absolute',
         top: 250,
       },
@@ -57,6 +70,17 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         textTransform: 'uppercase',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+      },
+
+      buttonStyle: {
+        color: '#fff',
+        fontSize: 18,
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        top: -300,
+        left: 35,
+        width: 100,
+        justifyContent: 'center'
       }
 });

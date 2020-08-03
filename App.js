@@ -10,6 +10,8 @@ import Signup from './components/signup';
 import Dashboard from './components/dashboard';
 import LoadingScreen from './components/LoadingScreen';
 import VoteQ1 from './components/VoteQ1.js';
+import VoteQ2N from './components/VoteQ2N.js';
+import AddRegistration from './components/AddRegistration.js';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +54,17 @@ function MyStack() {
       <Stack.Screen
         name="VoteQ1"
         component={VoteQ1}
+      />
+
+      <Stack.Screen
+        name="VoteQ2N"
+        component={VoteQ2N}
+      />
+
+
+      <Stack.Screen
+        name="AddRegistration"
+        component={AddRegistration}
       />
 
     </Stack.Navigator>

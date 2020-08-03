@@ -1,30 +1,40 @@
 import React from 'react';
-import {View, Text, StyleSheet, ActivityIndicator, Image} from 'react-native';
+import {View, Text, StyleSheet, ActivityIndicator, Image, TouchableHighlight} from 'react-native';
 
 
-export default class VoteQ2 extends React.Component{
+export default class AddRegistration extends React.Component{
     render(){
         return(
             <View style={styles.container}>
+                {/* <TouchableHighlight style={styles.backButton}
+                onPress={() => this.props.navigation.navigate('VoteQ1')}
+                >
+                    <Image
+                    style={{width: 45, height: 45, left: -160, top: 50, justifyContent: 'flex-start'}}
+                    source = {require("../assets/back.png")} 
+                    />
+                </TouchableHighlight> */}
+
+                <View style={styles.backButton}>
+                    <Text 
+                    style={styles.textStyle}
+                    onPress={() => this.props.navigation.navigate('VoteQ1')}>
+                    Back
+                    </Text> 
+                </View>
+
                 <View style = {styles.logo}>
                     <Image 
                     style={{width: 150, height: 150, left:135, justifyContent: 'center'}}
                     source = {require("../assets/splash2.png")} 
                     resizeMode={'cover'}
                     />
-                    </View>
+                </View>
 
                 <View style = {styles.questionStyle}>
                     <Text style={styles.textStyle}>
-                    Are you registered to vote?
+                    Where are you registered to vote?
                     </Text>
-                </View>
-
-
-                <View>
-                    <Button>
-                        
-                    </Button>
                 </View>
             </View>
         )
@@ -58,5 +68,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textTransform: 'uppercase',
         fontWeight: 'bold'
+      },
+
+      backButton:{
+        left: -160, 
+        top: 50, 
+        justifyContent: 'flex-start'
       }
 });

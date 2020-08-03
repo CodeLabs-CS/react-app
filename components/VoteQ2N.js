@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, ActivityIndicator, Image} from 'react-native';
 
 
-export default class VoteRegister extends React.Component{
+export default class VoteQ2N extends React.Component{
     render(){
         return(
             <View style={styles.container}>
@@ -20,13 +20,27 @@ export default class VoteRegister extends React.Component{
                     </Text>
                 </View>
 
+                <View style={{flex: 1, flexDirection: 'row'}}>
 
-                <View>
-                    <Button>
-                        
-                    </Button>
+                <View style={styles.buttonStyle}>
+                    <Text 
+                    style={styles.textStyle}
+                    onPress={() => this.props.navigation.navigate('AddRegistration')}>
+                    Yes
+                    </Text>  
                 </View>
+
+                <View style={styles.buttonStyle}>
+                    <Text 
+                    style={styles.textStyle}
+                    onPress={() => this.props.navigation.navigate('Dashboard')}>
+                    No
+                    </Text> 
+                </View>
+
             </View>
+
+        </View>
         )
     }
 }
@@ -58,5 +72,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textTransform: 'uppercase',
         fontWeight: 'bold'
+      },
+
+      buttonStyle: {
+        color: '#fff',
+        fontSize: 18,
+        textTransform: 'uppercase',
+        fontWeight: 'bold',
+        top: -300,
+        left: 35,
+        width: 100,
+        justifyContent: 'center'
       }
+
 });
