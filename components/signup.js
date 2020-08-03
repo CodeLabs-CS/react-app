@@ -1,7 +1,7 @@
 // components/signup.js
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image} from 'react-native';
+import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator} from 'react-native';
 import * as firebase from "firebase";
 
 export default class Signup extends Component {
@@ -50,34 +50,31 @@ export default class Signup extends Component {
   }
 
   render() {
-    // if(this.state.isLoading){
-    //   return(
-    //     <View style={styles.preloader}>
-    //       <ActivityIndicator size="large" color="#9E9E9E"/>
-    //     </View>
-    //   )
-    // }    
-
-    if (this.state.isLoading) {
-      return (
-        <AppLoading
-          startAsync={this._cacheResourcesAsync}
-          onFinish={() => this.setState({ isLoading: false })}
-          onError={console.warn}
-        />
-      ); }
+    if(this.state.isLoading){
+      return(
+        <View style={styles.preloader}>
+          <ActivityIndicator size="large" color="#9E9E9E"/>
+        </View>
+      )
+    }    
 
     return (
       <View style={styles.container}>  
 
-        <View style = {{width: "100%", flex:1, marginTop:64}}>
-          <Image source = {require('../assets/splash2.png')} />
+        <View style = {{width: "100%", flex:1, justifyContent: 'center', paddingBottom: 0, marginBottom: 0}}>
+          <Image 
+          style={{width: 250, height: 250, top: -30, left: 50, justifyContent: 'center'}}
+          source = {require("../assets/splash2.png")} 
+          resizeMode={'cover'}
+          p
+          />
 
         </View>
 
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
+          placeholderTextColor='#fff'
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
         />  
@@ -85,12 +82,14 @@ export default class Signup extends Component {
         <TextInput
           style={styles.inputStyle}
           placeholder="Email"
+          placeholderTextColor='#fff'
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
         <TextInput
           style={styles.inputStyle}
           placeholder="Password"
+          placeholderTextColor='#fff'
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}
@@ -110,14 +109,6 @@ export default class Signup extends Component {
       </View>
     );
   }
-
-  async _cacheResourcesAsync() {
-    // const images = [require('../assets/splash2.png')];
-    const cacheImages = images.map(image => {
-      return Asset.fromModule(image).downloadAsync();
-    }); 
-    return Promise.all(cacheImages);
-  }
 }
 
 const styles = StyleSheet.create({
@@ -129,13 +120,15 @@ const styles = StyleSheet.create({
     padding: 35,
     backgroundColor: '#293428'
   },
+
   inputStyle: {
     width: '100%',
     marginBottom: 15,
     paddingBottom: 15,
     alignSelf: "center",
     borderColor: "#ccc",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    color: '#fff',
   },
   loginText: {
     color: '#fff',
