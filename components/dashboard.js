@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import * as firebase from "firebase";
+import { StatusBar } from 'expo-status-bar';
 
 export default class Dashboard extends Component {
   constructor() {

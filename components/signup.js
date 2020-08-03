@@ -1,7 +1,7 @@
 // components/signup.js
 
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image} from 'react-native';
 import * as firebase from "firebase";
 
 export default class Signup extends Component {
@@ -50,22 +50,38 @@ export default class Signup extends Component {
   }
 
   render() {
-    if(this.state.isLoading){
-      return(
-        <View style={styles.preloader}>
-          <ActivityIndicator size="large" color="#9E9E9E"/>
-        </View>
-      )
-    }    
+    // if(this.state.isLoading){
+    //   return(
+    //     <View style={styles.preloader}>
+    //       <ActivityIndicator size="large" color="#9E9E9E"/>
+    //     </View>
+    //   )
+    // }    
+
+    if (this.state.isLoading) {
+      return (
+        <AppLoading
+          startAsync={this._cacheResourcesAsync}
+          onFinish={() => this.setState({ isLoading: false })}
+          onError={console.warn}
+        />
+      ); }
+
     return (
       <View style={styles.container}>  
-        {/* <Image source = {require('../assets/logo.svg')} style={styles.Logo}/> */}
+
+        <View style = {{width: "100%", flex:1, marginTop:64}}>
+          <Image source = {require('../assets/splash2.png')} />
+
+        </View>
+
         <TextInput
           style={styles.inputStyle}
           placeholder="Name"
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
-        />      
+        />  
+
         <TextInput
           style={styles.inputStyle}
           placeholder="Email"
@@ -93,6 +109,14 @@ export default class Signup extends Component {
         </Text>                          
       </View>
     );
+  }
+
+  async _cacheResourcesAsync() {
+    // const images = [require('../assets/splash2.png')];
+    const cacheImages = images.map(image => {
+      return Asset.fromModule(image).downloadAsync();
+    }); 
+    return Promise.all(cacheImages);
   }
 }
 
