@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     alignSelf: "center",
     borderColor: "#fff",
+    color: '#fff',
     borderBottomWidth: 1,
     top: -400
   },

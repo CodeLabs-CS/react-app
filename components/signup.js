@@ -1,8 +1,8 @@
-// components/signup.js
-
 import React, { Component } from 'react';
 import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator} from 'react-native';
 import * as firebase from "firebase";
+
+import Login from './login.js'
 
 export default class Signup extends Component {
   
@@ -24,7 +24,7 @@ export default class Signup extends Component {
 
   registerUser = () => {
     if(this.state.email === '' && this.state.password === '') {
-      Alert.alert('Enter details to signup!')
+      Alert.alert('Enter details to sign up.')
     } else {
       this.setState({
         isLoading: true,
@@ -43,7 +43,7 @@ export default class Signup extends Component {
           email: '', 
           password: ''
         })
-        this.props.navigation.navigate('Login')
+        this.props.navigation.navigate('Dashboard')
       })
       .catch(error => this.setState({ errorMessage: error.message }))      
     }

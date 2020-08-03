@@ -48,10 +48,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 35,
-    backgroundColor: '#fff'
+    backgroundColor: '#293428'
   },
   textStyle: {
     fontSize: 15,
-    marginBottom: 20
+    marginBottom: 20,
+    color: '#fff'
   }
 });

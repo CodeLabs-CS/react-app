@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add expo@^38.0.0
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add @react-native-firebase/app
 
 PATH: 
-  /usr/local/lib/node_modules/expo-cli/node_modules/@expo/xdl/binaries/osx/adb:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 
 Yarn version: 
   1.22.4
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/Users/liliaqian/Desktop/react-app/node_modules/.bin/acorn'
+  Error: EACCES: permission denied, unlink '/Users/liliaqian/Desktop/react-app/node_modules/.bin/ansi-html'
 
 npm manifest: 
   {
@@ -35,7 +35,7 @@ npm manifest:
       "@react-navigation/stack": "^5.8.0",
       "expo": "^38.0.0",
       "expo-status-bar": "^1.0.0",
-      "firebase": "^7.9.0",
+      "firebase": "^7.7.0-0",
       "react": "16.11.0",
       "react-dom": "16.11.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
