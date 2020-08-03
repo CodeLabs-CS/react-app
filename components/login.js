@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image} from 'react-native';
 import * as firebase from "firebase";
 
+import VoteQ1 from './VoteQ1.js';
+
 export default class Login extends Component {
   
   constructor() {
@@ -37,7 +39,7 @@ export default class Login extends Component {
           email: '', 
           password: ''
         })
-        this.props.navigation.navigate('Dashboard')
+        this.props.navigation.navigate('VoteQ1')
       })
       .catch(error => this.setState({ errorMessage: error.message }))
     }

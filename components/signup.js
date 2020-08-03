@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator} from 'react-native';
 import * as firebase from "firebase";
 
-import Login from './login.js'
+import Login from './login.js';
+import VoteQ1 from './VoteQ1.js';
 
 export default class Signup extends Component {
   
@@ -43,7 +44,7 @@ export default class Signup extends Component {
           email: '', 
           password: ''
         })
-        this.props.navigation.navigate('Dashboard')
+        this.props.navigation.navigate('VoteQ1')
       })
       .catch(error => this.setState({ errorMessage: error.message }))      
     }
@@ -68,6 +69,7 @@ export default class Signup extends Component {
           resizeMode={'cover'}
           />
         </View>
+        
         <View style={styles.bottom}>
           <Button
             style={styles.buttonStyle}

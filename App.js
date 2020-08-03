@@ -48,6 +48,12 @@ function MyStack() {
        }
       />
 
+
+      <Stack.Screen
+        name="VoteQ1"
+        component={VoteQ1}
+      />
+
     </Stack.Navigator>
     </NavigationContainer>
   );
