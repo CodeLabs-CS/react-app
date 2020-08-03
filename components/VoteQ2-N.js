@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, ActivityIndicator, Image, Button} from 'react-native';
+import {View, Text, StyleSheet, ActivityIndicator, Image} from 'react-native';
 
 
-export default class VoteQ1 extends React.Component{
+export default class VoteQ2 extends React.Component{
     render(){
         return(
             <View style={styles.container}>
@@ -16,16 +16,16 @@ export default class VoteQ1 extends React.Component{
 
                 <View style = {styles.questionStyle}>
                     <Text style={styles.textStyle}>
-                    Have you ever voted?
+                    Are you registered to vote?
                     </Text>
                 </View>
 
 
-                {/* <View>
+                <View>
                     <Button>
-
+                        
                     </Button>
-                </View> */}
+                </View>
             </View>
         )
     }
