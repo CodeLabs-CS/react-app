@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import * as firebase from "firebase";
 
-/*import * as Tableau from './Tableau';
-import * as Tableau2 from './Tableau2';
-import * as Tableau3 from './Tableau3';*/
-
 export default class Dashboard extends Component {
   constructor() {
     super();
@@ -36,7 +32,7 @@ export default class Dashboard extends Component {
         <Button
           color="#3740FE"
           title="Display Graph"
-          onPress={() => this.props.navigation.navigate("Tableau")}
+          onPress={() => this.props.navigation.navigate("Graph 1: Candidates")}
         />
 
         <Button

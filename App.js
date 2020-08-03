@@ -25,18 +25,6 @@ import Tableau from './components/Tableau';
 import Tableau2 from './components/Tableau2';
 import Tableau3 from './components/Tableau3';
 
-// create the app's navigation stack
-const RootStack = createSwitchNavigator(
-  {
-    Loading: Loading,
-    SignUp: SignUp,
-    Login: Login,
-    Main: Main,
-  },
-  {
-    initialRouteName: "Loading"
-  }
-);
 
 const Stack = createStackNavigator();
 
@@ -77,7 +65,7 @@ function MyStack() {
       />
 
       <Stack.Screen 
-        name="Tableau" 
+        name="Graph 1: Candidates" 
         component={Tableau} 
         options={
           { title: 'Candidates' },
@@ -86,7 +74,7 @@ function MyStack() {
       />
 
       <Stack.Screen 
-        name="Tableau 2" 
+        name="Graph 2: Location of Candidates" 
         component={Tableau2} 
         options={
           { title: 'Location of Candidates' },
@@ -95,7 +83,7 @@ function MyStack() {
       />
 
       <Stack.Screen 
-        name="Tableau 3" 
+        name="Graph 3: Contact Info of Candidates" 
         component={Tableau3} 
         options={
           { title: 'Contact Information of Candidates' },

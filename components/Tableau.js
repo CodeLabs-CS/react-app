@@ -21,26 +21,51 @@ class Tableau extends Component {
     }
     render() {
         return (
-            <div ref = {div => this.vizContainer = div}>
-                <Button 
-                    color="#3740FE"
-                    title="Back"
-                    onPress={() => this.props.navigation.navigate("Dashboard")}/>
+            <View style={ styles.MainContainer}>
+                <div ref = {div => this.vizContainer = div}>
+                    <View style={ styles.bottomView }>
+                    <Button 
+                        color="#3740FE"
+                        title="Dashboard"
+                        onPress={() => this.props.navigation.navigate("Dashboard")}/>
 
-                <Button 
-                    color="#3740FE"
-                    title="Graph 2"
-                    onPress={() => this.props.navigation.navigate("Tableau 2")}/>
+                    <Button 
+                        color="#3740FE"
+                        title="Graph 2"
+                        onPress={() => this.props.navigation.navigate("Graph 2: Location of Candidates")}/>
 
-                <Button 
-                    color="#3740FE"
-                    title="Graph 3"
-                    onPress={() => this.props.navigation.navigate("Tableau 3")}/>
-            </div>
+                    <Button 
+                        color="#3740FE"
+                        title="Graph 3"
+                        onPress={() => this.props.navigation.navigate("Graph 3: Contact Info of Candidates")}/>
+                    </View>
+                </div>
+            </View>
 
         );
     }
 }
 
 export default Tableau
+
+const styles = StyleSheet.create({
+    MainContainer:
+    {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 50
+    },
+ 
+    bottomView:{
+ 
+      width: '100%', 
+      height: 50, 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      position: 'absolute',
+      padding: 50,
+      bottom: -100
+    },
+  });
 

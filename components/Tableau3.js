@@ -21,25 +21,50 @@ class Tableau3 extends Component {
     }
     render() {
         return (
+            <View style={ styles.MainContainer}>
             <div ref = {div => this.vizContainer = div}>
-                 <Button 
+                <View style={ styles.bottomView }>
+                <Button 
                     color="#3740FE"
-                    title="Back"
+                    title="Dashboard"
                     onPress={() => this.props.navigation.navigate("Dashboard")}/>
 
                 <Button 
                     color="#3740FE"
                     title="Graph 1"
-                    onPress={() => this.props.navigation.navigate("Tableau")}/>
+                    onPress={() => this.props.navigation.navigate("Graph 1: Candidates")}/>
 
                 <Button 
                     color="#3740FE"
                     title="Graph 2"
-                    onPress={() => this.props.navigation.navigate("Tableau 2")}/>
-
+                    onPress={() => this.props.navigation.navigate("Graph 2: Location of Candidates")}/>
+                </View>
             </div>
+        </View>
         )
     }
 }
 
 export default Tableau3
+
+const styles = StyleSheet.create({
+    MainContainer:
+    {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: 50
+    },
+ 
+    bottomView:{
+ 
+      width: '100%', 
+      height: 50, 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      position: 'absolute',
+      padding: 50,
+      bottom: -100
+    },
+  });
+
