@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, ActivityIndicator, Image} from 'react-native';
 import * as firebase from "firebase";
 
 export default class Login extends Component {
@@ -53,9 +53,27 @@ export default class Login extends Component {
     }    
     return (
       <View style={styles.container}>  
+
+        <View style = {styles.logo}>
+          <Image 
+          style={{width: 250, height: 250, left: 50, justifyContent: 'center'}}
+          source = {require("../assets/splash2.png")} 
+          resizeMode={'cover'}
+          />
+        </View>
+
+        <View style={styles.bottom}>
+          <Button
+            color="#fff"
+            title="Sign In"
+            onPress={() => this.userLogin()}
+          />   
+        </View>
+
         <TextInput
           style={styles.inputStyle}
           placeholder="Email"
+          placeholderTextColor='#fff'
           color="white"
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
@@ -63,21 +81,17 @@ export default class Login extends Component {
         <TextInput
           style={styles.inputStyle}
           placeholder="Password"
+          placeholderTextColor='#fff'
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}
           secureTextEntry={true}
         />   
-        <Button
-          color="#3740FE"
-          title="Sign In"
-          onPress={() => this.userLogin()}
-        />   
 
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Signup')}>
-          Don't have account? Click here to sign up.
+          Don't have an account? Tap here to sign up.
         </Text>                          
       </View>
     );
@@ -93,22 +107,25 @@ const styles = StyleSheet.create({
     padding: 35,
     backgroundColor: '#293428'
   },
+
+
   inputStyle: {
     width: '100%',
     marginBottom: 15,
     paddingBottom: 15,
     alignSelf: "center",
     borderColor: "#fff",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    top: -400
   },
-  // textInputStyle: {
-  //   color:'#fff'
-  // },
+
   loginText: {
     color: '#fff',
-    marginTop: 25,
-    textAlign: 'center'
+    marginTop: 0,
+    textAlign: 'center',
+    top: -250
   },
+
   preloader: {
     left: 0,
     right: 0,
@@ -118,5 +135,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff'
-  }
+  },
+
+
+  logo: {
+    flex: 1,
+    width: "100%",
+    height: null,
+    justifyContent:'center'
+  },
+
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    top: -200  
+  },
+
+
 });

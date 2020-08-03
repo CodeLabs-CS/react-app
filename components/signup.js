@@ -61,23 +61,30 @@ export default class Signup extends Component {
     return (
       <View style={styles.container}>  
 
-        <View style = {{width: "100%", flex:1, justifyContent: 'center', paddingBottom: 0, marginBottom: 0}}>
+        <View style = {styles.logo}>
           <Image 
-          style={{width: 250, height: 250, top: -80, left: 50, justifyContent: 'center'}}
+          style={{width: 250, height: 250, left: 50, justifyContent: 'center'}}
           source = {require("../assets/splash2.png")} 
           resizeMode={'cover'}
-          p
           />
-
         </View>
+        <View style={styles.bottom}>
+          <Button
+            style={styles.buttonStyle}
+            color="#fff"
+            title="Sign Up"
+            onPress={() => this.registerUser()}
+          />
+        </View>
+        
 
         <TextInput
           style={styles.inputStyle}
-          placeholder="Name"
+          placeholder="Full Name"
           placeholderTextColor='#fff'
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
-        />  
+        />
 
         <TextInput
           style={styles.inputStyle}
@@ -94,17 +101,12 @@ export default class Signup extends Component {
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}
           secureTextEntry={true}
-        />   
-        <Button
-          color="#fff"
-          title="Sign Up"
-          onPress={() => this.registerUser()}
         />
 
         <Text 
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Login')}>
-          Already Registered? Click here to log in.
+          Already Registered? Tap here to log in.
         </Text>                          
       </View>
     );
@@ -116,6 +118,7 @@ const styles = StyleSheet.create({
     flex: 1,
     display: "flex",
     flexDirection: "column",
+    alignItems: 'center',
     justifyContent: "center",
     padding: 35,
     backgroundColor: '#293428'
@@ -129,12 +132,22 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderBottomWidth: 1,
     color: '#fff',
+    top: -350
   },
+
+  bottom: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    top: -150  
+  },
+
   loginText: {
     color: '#fff',
-    marginTop: 25,
+    marginTop: 0,
+    top: -250,
     textAlign: 'center'
   },
+
   preloader: {
     left: 0,
     right: 0,
@@ -145,9 +158,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff'
   },
-  Logo: {
+
+
+  logo: {
     flex: 1,
-    width:null,
+    width: "100%",
     height: null,
     justifyContent:'center'
   }

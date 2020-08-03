@@ -15,16 +15,30 @@ import LoadingScreen from './components/LoadingScreen';
 
 //firebase configuration
 import * as firebase from "firebase";
+// var firebaseConfig = {
+//   apiKey: "AIzaSyDmDITr2c11TBklQ6s05KGGh4NALcNOCdk",
+//   authDomain: "reacthooks-firebaselogin.firebaseapp.com",
+//   databaseURL: "https://reacthooks-firebaselogin.firebaseio.com",
+//   projectId: "reacthooks-firebaselogin",
+//   storageBucket: "reacthooks-firebaselogin.appspot.com",
+//   messagingSenderId: "403004885385",
+//   appId: "1:403004885385:web:9f3ba64118d35e09183958"
+// };
+// // Initialize Firebase
+// if(!firebase.apps.length){
+//   firebase.initializeApp(firebaseConfig);
+// }
+
 var firebaseConfig = {
-  apiKey: "AIzaSyDmDITr2c11TBklQ6s05KGGh4NALcNOCdk",
-  authDomain: "reacthooks-firebaselogin.firebaseapp.com",
-  databaseURL: "https://reacthooks-firebaselogin.firebaseio.com",
-  projectId: "reacthooks-firebaselogin",
-  storageBucket: "reacthooks-firebaselogin.appspot.com",
-  messagingSenderId: "403004885385",
-  appId: "1:403004885385:web:9f3ba64118d35e09183958"
+  apiKey: "AIzaSyAID_0rrn_QhwdhR5rNag-fbUuyuaQjvSE",
+  authDomain: "react-app-febbc.firebaseapp.com",
+  databaseURL: "https://react-app-febbc.firebaseio.com",
+  projectId: "react-app-febbc",
+  storageBucket: "react-app-febbc.appspot.com",
+  messagingSenderId: "378992588494",
+  appId: "1:378992588494:web:f27382930c6d44c492c29f",
+  measurementId: "G-0Z97Y1Z435"
 };
-// Initialize Firebase
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
 }
