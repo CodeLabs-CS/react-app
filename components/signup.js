@@ -63,7 +63,7 @@ export default class Signup extends Component {
 
         <View style = {{width: "100%", flex:1, justifyContent: 'center', paddingBottom: 0, marginBottom: 0}}>
           <Image 
-          style={{width: 250, height: 250, top: -30, left: 50, justifyContent: 'center'}}
+          style={{width: 250, height: 250, top: -80, left: 50, justifyContent: 'center'}}
           source = {require("../assets/splash2.png")} 
           resizeMode={'cover'}
           p

@@ -12,6 +12,8 @@ import Signup from './components/signup';
 import Dashboard from './components/dashboard';
 import LoadingScreen from './components/LoadingScreen';
 
+
+//firebase configuration
 import * as firebase from "firebase";
 var firebaseConfig = {
   apiKey: "AIzaSyDmDITr2c11TBklQ6s05KGGh4NALcNOCdk",
@@ -26,23 +28,21 @@ var firebaseConfig = {
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
 }
+
+
+
+//stack navigator
 const Main = createStackNavigator();
 
 function AppStack() {
   return (
     <NavigationContainer>
+        <StatusBar style="light" />
+
         <Main.Navigator
         initialRouteName="Signup"
         screenOptions={{
           headerShown: false
-        // headerTitleAlign: 'center',
-        // headerStyle: {
-        //   backgroundColor: '#293428',
-        //   },
-        // headerTintColor: '#fff',
-        // headerTitleStyle: {
-        // fontWeight: 'bold',
-        // },
         }}>
       
       <Main.Screen 
@@ -76,9 +76,7 @@ function AppStack() {
 
 function App() {
   return (
-    // <NavigationContainer>
       <AppStack />
-    // </NavigationContainer>
   );
 }
 
