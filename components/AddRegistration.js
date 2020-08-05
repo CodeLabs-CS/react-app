@@ -6,21 +6,17 @@ export default class AddRegistration extends React.Component{
     render(){
         return(
             <View style={styles.container}>
-                {/* <TouchableHighlight style={styles.backButton}
+                <View>
+                <TouchableHighlight 
+                style={styles.backButton}
                 onPress={() => this.props.navigation.navigate('VoteQ1')}
                 >
-                    <Image
-                    style={{width: 45, height: 45, left: -160, top: 50, justifyContent: 'flex-start'}}
-                    source = {require("../assets/back.png")} 
-                    />
-                </TouchableHighlight> */}
-
-                <View style={styles.backButton}>
                     <Text 
                     style={styles.textStyle}
-                    onPress={() => this.props.navigation.navigate('VoteQ1')}>
+                    onPress={() => this.props.navigation.goBack}>
                     Back
                     </Text> 
+                </TouchableHighlight>
                 </View>
 
                 <View style = {styles.logo}>
@@ -36,6 +32,21 @@ export default class AddRegistration extends React.Component{
                     Where are you registered to vote?
                     </Text>
                 </View>
+
+
+                <View style = {styles.addButton}>
+                    <Image 
+                    style={{width:50, height:50, position:'absolute', justifyContent: 'center'}}
+                    source = {require("../assets/add.png")} 
+                    // resizeMode={'cover'}
+                    />
+                    
+                </View>
+
+                <Text 
+                    style={styles.instrucStyle}>
+                        Tap to add a registration
+                </Text>
             </View>
         )
     }
@@ -45,6 +56,7 @@ export default class AddRegistration extends React.Component{
 const styles = StyleSheet.create({
     container:{
         flex: 1,
+        flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: "center",
         backgroundColor: '#293428',
@@ -71,8 +83,28 @@ const styles = StyleSheet.create({
       },
 
       backButton:{
-        left: -160, 
-        top: 50, 
+        left: -140, 
+        top: 70, 
         justifyContent: 'flex-start'
+      },
+
+      addButton: {
+        //   flex: 1,
+        flexDirection: 'column', 
+        position: 'relative',
+        left: -30,
+        top: -500,
+        justifyContent:'space-between'
+
+      },
+
+      instrucStyle: {
+        position: 'relative',
+        left: 0,
+        top: -410,
+        color: '#fff',
+        fontSize: 14,
+        textTransform: 'uppercase',
+        fontWeight: 'bold'
       }
 });

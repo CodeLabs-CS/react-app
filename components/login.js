@@ -76,6 +76,7 @@ export default class Login extends Component {
           style={styles.inputStyle}
           placeholder="Email"
           placeholderTextColor='#fff'
+          autoCapitalize = 'none'
           color="white"
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
@@ -84,6 +85,7 @@ export default class Login extends Component {
           style={styles.inputStyle}
           placeholder="Password"
           placeholderTextColor='#fff'
+          autoCapitalize = 'none'
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}

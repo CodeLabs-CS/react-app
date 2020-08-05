@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
 import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator} from 'react-native';
 import * as firebase from "firebase";
+import React, { useState, useEffect, Component} from 'react';
 
 import Login from './login.js';
 import VoteQ1 from './VoteQ1.js';
@@ -84,6 +84,7 @@ export default class Signup extends Component {
           style={styles.inputStyle}
           placeholder="Full Name"
           placeholderTextColor='#fff'
+          autoCapitalize = 'none'
           value={this.state.displayName}
           onChangeText={(val) => this.updateInputVal(val, 'displayName')}
         />
@@ -92,6 +93,7 @@ export default class Signup extends Component {
           style={styles.inputStyle}
           placeholder="Email"
           placeholderTextColor='#fff'
+          autoCapitalize = 'none'
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
@@ -99,6 +101,7 @@ export default class Signup extends Component {
           style={styles.inputStyle}
           placeholder="Password"
           placeholderTextColor='#fff'
+          autoCapitalize = 'none'
           value={this.state.password}
           onChangeText={(val) => this.updateInputVal(val, 'password')}
           maxLength={15}

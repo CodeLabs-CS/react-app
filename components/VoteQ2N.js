@@ -12,7 +12,7 @@ export default class VoteQ2N extends React.Component{
                     source = {require("../assets/splash2.png")} 
                     resizeMode={'cover'}
                     />
-                    </View>
+                </View>
 
                 <View style = {styles.questionStyle}>
                     <Text style={styles.textStyle}>
