@@ -1,7 +1,9 @@
 // components/dashboard.js
+
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 import * as firebase from "firebase";
+import { StatusBar } from 'expo-status-bar';
 
 export default class Dashboard extends Component {
   constructor() {
@@ -30,16 +32,16 @@ export default class Dashboard extends Component {
         </Text>
 
         <Button
-          color="#3740FE"
+          color="#6FCF97"
           title="Display Graph"
           onPress={() => this.props.navigation.navigate("Graph 1: Candidates")}
         />
 
         <Button
-          color="#3740FE"
+          color="#6FCF97"
           title="Logout"
           onPress={() => this.signOut()}
-        />        
+        />     
       </View>
     );
   }
@@ -52,14 +54,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 35,
-    backgroundColor: '#fff'
+    backgroundColor: '#293428'
   },
   textStyle: {
     fontSize: 15,
-    marginBottom: 20
+    marginBottom: 20,
+    color: '#fff'
   }
 });
-
-
-
-      

@@ -13,8 +13,8 @@ class Tableau2 extends Component {
     initViz = () => {
         const options = {
             hideTabs : false,
-            width: '1520px',
-            height : '720px',
+            width: '380px',
+            height : '350px',
         }
         const vizContainer = this.vizContainer;
         this.div = new window.tableauSoftware.Viz(vizContainer, url, options);
@@ -25,17 +25,17 @@ class Tableau2 extends Component {
             <div ref = {div => this.vizContainer = div}>
                 <View style={ styles.bottomView }>
                 <Button 
-                    color="#3740FE"
+                    color="#6FCF97"
                     title="Dashboard"
                     onPress={() => this.props.navigation.navigate("Dashboard")}/>
 
                 <Button 
-                    color="#3740FE"
+                    color="#6FCF97"
                     title="Graph 1"
                     onPress={() => this.props.navigation.navigate("Graph 1: Candidates")}/>
 
                 <Button 
-                    color="#3740FE"
+                    color="#6FCF97"
                     title="Graph 3"
                     onPress={() => this.props.navigation.navigate("Graph 3: Contact Info of Candidates")}/>
                 </View>
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: 50
+        paddingTop: 50,
+        backgroundColor: '#293428'
     },
  
     bottomView:{
