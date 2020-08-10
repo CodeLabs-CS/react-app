@@ -74,7 +74,7 @@ function MyStack() {
 
 function App() {
   return (
-      <MyStack />
+    <MyStack />
   );
 }
 

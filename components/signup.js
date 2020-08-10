@@ -17,10 +17,22 @@ export default class Signup extends Component {
   }
 
   updateInputVal = (val, prop) => {
-    const state = this.state;
-    state[prop] = val;
-    this.setState(state);
-  }
+  const state = this.state;
+  state[prop] = val;
+  this.setState(state);
+}
+
+  checkEmail = (val, prop) => {
+    firebase.auth().fetchSignInMethodsForEmail(val)
+    .then(results => {
+    if (results.length == 0 || !Array.isArray(results)) {
+      const state = this.state;
+      state[prop] = results;
+      this.setState(state);
+    }else{
+      console.log(error);
+    }})
+}
 
   registerUser = () => {
     if(this.state.email === '' && this.state.password === '') {
@@ -98,7 +110,7 @@ export default class Signup extends Component {
           placeholder="Email"
           placeholderTextColor='#fff'
           autoCapitalize = 'none'
-          onChangeText={(val) => this.updateInputVal(val, 'email')}
+          onChangeText={(val) => this.checkEmail(val, 'email')}
         />
 
         <TextInput
@@ -117,6 +129,7 @@ export default class Signup extends Component {
           onPress={() => this.props.navigation.navigate('Login')}>
           Already Registered? Tap here to log in.
         </Text>
+
                    
       </View>
     );
