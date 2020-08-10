@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { validate } from 'validate.js';
 
 import firebaseApp from './config/config.js';
 import Login from './components/login';
@@ -49,8 +50,7 @@ function MyStack() {
         {headerLeft: null} 
        }
       />
-
-
+      
       <Stack.Screen
         name="VoteQ1"
         component={VoteQ1}

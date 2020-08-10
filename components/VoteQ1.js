@@ -43,7 +43,6 @@ export default class VoteQ1 extends React.Component{
     }
 }
 
-
 const styles = StyleSheet.create({
     container:{
         flex: 1,

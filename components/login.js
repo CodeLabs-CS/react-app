@@ -21,6 +21,7 @@ export default class Login extends Component {
     this.setState(state);
   }
 
+
   userLogin = () => {
     if(this.state.email === '' && this.state.password === '') {
       Alert.alert('Enter details to sign in!')
@@ -78,6 +79,13 @@ export default class Login extends Component {
           placeholderTextColor='#fff'
           autoCapitalize = 'none'
           color="white"
+          onChangeText={(userName) => {
+            this.setState({userName},()=>{
+            if (!this.validateEmail(this.state.email)) {
+            Alert.alert("Invalid email.")
+            }
+            })
+            }}
           value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />

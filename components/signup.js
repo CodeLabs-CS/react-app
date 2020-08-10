@@ -1,9 +1,7 @@
-import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator} from 'react-native';
+import {StyleSheet, Text, Image, View, TextInput, Button, Alert, ActivityIndicator, TouchableHighlight} from 'react-native';
 import * as firebase from "firebase";
-import React, { useState, useEffect, Component} from 'react';
+import React, { Component } from 'react';
 
-import Login from './login.js';
-import VoteQ1 from './VoteQ1.js';
 
 export default class Signup extends Component {
   
@@ -13,8 +11,9 @@ export default class Signup extends Component {
       displayName: '',
       email: '', 
       password: '',
-      isLoading: false
-    }
+      isLoading: false,
+    };
+
   }
 
   updateInputVal = (val, prop) => {
@@ -27,9 +26,12 @@ export default class Signup extends Component {
     if(this.state.email === '' && this.state.password === '') {
       Alert.alert('Enter details to sign up.')
     } else {
+
       this.setState({
         isLoading: true,
       })
+
+
       firebase
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
@@ -50,6 +52,8 @@ export default class Signup extends Component {
     }
   }
 
+
+  
   render() {
     if(this.state.isLoading){
       return(
@@ -94,9 +98,9 @@ export default class Signup extends Component {
           placeholder="Email"
           placeholderTextColor='#fff'
           autoCapitalize = 'none'
-          value={this.state.email}
           onChangeText={(val) => this.updateInputVal(val, 'email')}
         />
+
         <TextInput
           style={styles.inputStyle}
           placeholder="Password"
@@ -112,7 +116,8 @@ export default class Signup extends Component {
           style={styles.loginText}
           onPress={() => this.props.navigation.navigate('Login')}>
           Already Registered? Tap here to log in.
-        </Text>                           
+        </Text>
+                   
       </View>
     );
   }
